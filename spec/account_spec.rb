@@ -16,4 +16,15 @@ describe Account do
       expect{ subject.withdraw 1 }.to change { subject.balance }.by(-1)
     end
   end
+  describe '#statement' do
+    it "should store each transaction in an array" do
+      expect(subject.statement).to be_an_instance_of(Array)
+    end
+    it "should store each transaction" do
+      account = Account.new
+      account.deposit(20)
+      test_date = account.date
+      expect(account.statement).to match_array([["#{test_date}", "+20", "20"]])
+    end
+  end
 end
