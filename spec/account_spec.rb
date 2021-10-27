@@ -1,6 +1,6 @@
-require './lib/money'
+require './lib/account'
 
-describe Money do
+describe Account do
   it "should have a balance of 0" do
     expect(subject.balance).to eq(0)
   end

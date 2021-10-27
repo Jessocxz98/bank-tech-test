@@ -1,4 +1,4 @@
-class Money
+class Account
 
   def initialize
     @balance = 0
